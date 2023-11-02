@@ -54,10 +54,12 @@ const LineChart = ({ isDashboard = false }) => {
         reverse: false,
       }}
       yFormat=" >-.2f"
+      curve="catmullRom"
       axisTop={null}
       axisRight={null}
       axisBottom={{
-        tickSize: 5,
+        orient: 'bottom',
+        tickSize: 0,
         tickPadding: 5,
         tickRotation: 0,
         legend: isDashboard ? undefined : 'transportation',
@@ -73,7 +75,9 @@ const LineChart = ({ isDashboard = false }) => {
         legendOffset: -40,
         legendPosition: 'middle',
       }}
-      pointSize={10}
+      enableGridX={false}
+      enableGridY={false}
+      pointSize={8}
       pointColor={{ theme: 'background' }}
       pointBorderWidth={2}
       pointBorderColor={{ from: 'serieColor' }}
